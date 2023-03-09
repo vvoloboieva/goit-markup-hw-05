@@ -493,10 +493,6 @@ img {
   opacity: 1;
 }
 
-.card.hover .card-content {
-  z-index: 1000;
-}
-
 .card-img {
   position: relative;
   overflow: hidden;
@@ -598,21 +594,36 @@ img {
 .cross,
 .close {
   position: absolute;
-  top: 24px;
-  right: 24px;
   width: 24px;
   height: 24px;
+  display: block;
 }
 
 .cross {
-  background: var(--accent);
+  top: 24px;
+  right: 24px;
+  background-color: var(--accent);
   opacity: 0.1;
   border: 1px solid var(--hero-bg);
   border-radius: 50%;
 }
 
 .close {
-  color: var(--hero-bg);
+  fill: var(--hero-bg);
   opacity: 1;
-  padding: 8px;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cross:hover {
+  background-color: var(--pressed);
+  opacity: 1;
+  border: 0;
+}
+
+.cross:hover .close {
+  fill: #f4f4fd;
 }

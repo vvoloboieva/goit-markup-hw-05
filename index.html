@@ -32,7 +32,7 @@
               <a href="./portfolio.html" class="menu-link">Portfolio</a>
             </li>
             <li class="menu-item">
-              <a class="menu-link" data-modal-open>Contacts</a>
+              <a href="" class="menu-link">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -58,7 +58,9 @@
       <section class="hero">
         <div class="container">
           <h1 class="title1">Effective Solutions for Your Business</h1>
-          <button type="button" class="hero-cta">Order Service</button>
+          <button type="button" class="hero-cta" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
 
@@ -357,10 +359,11 @@
       </section>
       <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-          <div class="cross"></div>
-          <svg class="close" data-modal-close>
-            <use href="./images/icons.svg#icon-close"></use>
-          </svg>
+          <div class="cross" data-modal-close>
+            <svg class="close">
+              <use href="./images/icons.svg#icon-close"></use>
+            </svg>
+          </div>
         </div>
       </div>
     </main>
