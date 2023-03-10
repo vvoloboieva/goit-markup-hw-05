@@ -10,6 +10,7 @@
   --horizontal-gap: 24px;
   --vertical-gap: 48px;
   --large-v-gap: 120px;
+  --timing-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -158,7 +159,7 @@ img {
 .menu-link {
   text-decoration: none;
   color: var(--hero-bg);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-cubic);
 }
 
 .menu-link:hover,
@@ -184,7 +185,7 @@ img {
   text-decoration: none;
   color: var(--text);
   font-style: normal;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--timing-cubic);
 }
 
 .cont-link:hover,
@@ -228,7 +229,7 @@ img {
   margin: 48px auto 0;
   cursor: pointer;
   min-width: 169px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--timing-cubic);
 }
 
 .hero-cta:hover,
@@ -319,7 +320,7 @@ img {
   border-radius: 50%;
   padding: 12px;
   display: block;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--timing-cubic);
 }
 
 .social-item:last-child {
@@ -370,8 +371,7 @@ img {
   padding: 16px 32px;
   display: block;
   fill: var(--l-slate);
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms var(--timing-cubic), fill 250ms var(--timing-cubic);
 }
 
 .customer-item:hover,
@@ -439,8 +439,8 @@ img {
   letter-spacing: 0.04em;
   font-style: normal;
   font-family: "Roboto", sans-serif;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms var(--timing-cubic),
+    background-color 250ms var(--timing-cubic);
 }
 
 .project-tab {
@@ -465,7 +465,7 @@ img {
 
 .project-desc {
   position: absolute;
-  top: 360px;
+  top: 100%;
   background-color: var(--primary);
   width: 100%;
   height: 100%;
@@ -475,12 +475,12 @@ img {
   letter-spacing: 0.02em;
   color: var(--light);
   opacity: 0;
-  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms transform var(--timing-cubic);
 }
 
 .card {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms var(--timing-cubic);
   text-decoration: none;
   display: block;
 }
@@ -494,7 +494,7 @@ img {
 .card:hover .project-desc,
 .card:focus .project-desc {
   opacity: 1;
-  transform: translateY(-360px);
+  transform: translateY(-100%);
 }
 
 .card-img {
@@ -578,11 +578,16 @@ img {
   height: 100%;
   top: 0;
   background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms var(--timing-cubic);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .modal {
@@ -592,7 +597,8 @@ img {
   background-color: #fff;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-cubic);
 }
 
 .cross,
@@ -609,7 +615,7 @@ img {
   background-color: rgba(231, 233, 252, 0.1);
   border: 1px solid rgba(46, 47, 66, 0.1);
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--timing-cubic);
 }
 
 .close {
@@ -620,7 +626,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms var(--timing-cubic);
 }
 
 .cross:hover {
